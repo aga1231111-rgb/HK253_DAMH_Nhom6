@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý phòng</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body data-page="room-management">
+    <div data-include="header"></div>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <div data-include="menu"></div>
+      </aside>
+
+      <main class="content">
+        <section class="panel">
+          <div class="page-header">
+            <div>
+              <p class="eyebrow">Rooms</p>
+              <h2>Quản lý danh mục phòng họp</h2>
+              <p class="lead">Thêm phòng, cập nhật trạng thái và xem danh sách phòng.</p>
+            </div>
+          </div>
+
+          <form id="roomForm">
+            <div class="field">
+              <label for="roomName">Tên phòng</label>
+              <input id="roomName" name="roomName" required />
+            </div>
+            <div class="field">
+              <label for="roomCapacity">Sức chứa</label>
+              <input id="roomCapacity" name="roomCapacity" type="number" min="1" required />
+            </div>
+            <div class="field">
+              <label for="roomEquipment">Thiết bị</label>
+              <input id="roomEquipment" name="roomEquipment" required />
+            </div>
+            <div class="field">
+              <label for="roomStatus">Trạng thái</label>
+              <select id="roomStatus" name="roomStatus">
+                <option value="Trống">Trống</option>
+                <option value="Đang bận">Đang bận</option>
+              </select>
+            </div>
+            <div id="roomMessage" class="message"></div>
+            <div class="actions">
+              <button class="btn primary" type="submit">Lưu</button>
+            </div>
+          </form>
+
+          <div class="section-block">
+            <h3>Danh sách phòng</h3>
+            <div id="roomList" class="room-list"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div data-include="footer"></div>
+    <script src="../js/app.js"></script>
+  </body>
+</html>
